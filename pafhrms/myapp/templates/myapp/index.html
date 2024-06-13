@@ -1,0 +1,13 @@
+{% extends 'Base/base.html' %}
+
+
+{% block title %}PAFHRMIS{% endblock %}
+
+{% block content %}
+<h2>Personnel Records</h2>
+
+{% include 'myapp/searchforms.html' %}
+{% include 'myapp/tablewithPaginator.html' %}
+
+
+{% endblock %}

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}PAFHRMIS{% endblock %}</title>
+</head>
+<body>
+    <!-- sidebar -->
+    {% include 'Base/sidebar.html' %}
+    
+    <div id="content" class="p-4 p-md-5">
+        <div class="contents"> 
+          
+            {% block content %}
+            {% endblock %}
+        </div>
+        
+        <!-- Include the footer here -->
+        <!-- {% include 'Base/footer.html' %} -->
+    </div>
+</body>
+</html>

@@ -1,0 +1,179 @@
+<form>
+  <div class="input-group mb-3">
+    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="last_name" placeholder="Last Name" {% if last_name_query %}value="{{ last_name_query }}"{% endif %}>
+    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="first_name" placeholder="First Name" {% if first_name_query %}value="{{ first_name_query }}"{% endif %}>
+    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="middle_name" placeholder="Middle Name" {% if middle_name_query %}value="{{ middle_name_query }}"{% endif %}>
+    <div class="form-group col-md-2">
+      <select id="inputState" name="suffix" class="form-control">
+          <option value="Suffix" selected>Suffix</option>
+          <option value="Jr.">Jr.</option>
+          <option value="Sr.">Sr.</option>
+          <option value="II">II</option>
+          <option value="III">III</option>
+          <option value="Other">Other</option>
+      </select>
+  </div>
+  </div>
+  <div class="input-group mb-3">
+    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="afsn" placeholder="AFSN" {% if afsn_query %}value="{{ afsn_query }}"{% endif %}>
+      <div class="form-group col-md-2">
+        <select id="inputState" name = "rank" class="form-control">
+          <option selected>Rank</option>
+          <optgroup label="Officer">
+            <option value="GEN">GEN</option>
+            <option value="LTGEN">LTGEN</option>
+            <option value="BGEN">BGEN</option>
+            <option value="COL">COL</option>
+            <option value="LTC">LTC</option>
+            <option value="MAJ">MAJ</option>
+            <option value="CPT">CPT</option>
+            <option value="1LT">1LT</option>
+            <option value="2LT">2LT</option>
+          </optgroup>
+          <optgroup label="Enlisted Personnel">
+            <option value="CMSgt">CMSgt</option>
+            <option value="SMSgt">SMSgt</option>
+            <option value="MSgt">MSgt</option>
+            <option value="TSg">TSg</option>
+            <option value="SSg">SSg</option>
+            <option value="Sgt">Sgt</option>
+            <option value="A1C">A1C</option>
+            <option value="AW1C">AW1C</option>
+            <option value="A2C">A2C</option>
+            <option value="AW2C">AW2C</option>
+            <option value="AM">AM</option>
+            <option value="AW">AW</option>
+          </optgroup>
+        </select>
+      </div>
+      <div class="form-group col-md-4">
+          <select id="category_search" name="category" class="form-control">
+            <option selected>Category</option>
+            <option>Officer</option>
+            <option>Enlisted Personnel</option>
+          </select>
+      </div>
+      <div class="form-group col-md-2">
+          <select id="sex_search" name="sex" class="form-control">
+            <option selected>Sex</option>
+            <option>Male</option>
+            <option>Female</option>
+          </select>
+      </div>
+      <!-- THIS ONE WORKS, DONT DELETE YET, IT NEEDS TO SEARCH UNIT FROM DROPDOWN UNIT CREATED BELOW HERE -->
+      <!-- <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="unit" placeholder="Unit"> -->
+      
+      <select name="unit_search" class="form-control">
+        <option selected>UNIT</option>
+        <option>GHQ</option>
+        <option>HPAF</option>
+        <option>PAFHRMC-A/U</option>
+        <option>AFPWSSUS</option>
+        <option>AIBDC</option>
+        <option>ADC</option>
+        <option>AMC</option>
+        <option>ACC</option>
+        <option>AETDC</option>
+        <option>ARFC</option>
+        <option >TOWNOL</option>
+        <option >TOWSOL</option>
+        <option >TOWCEN</option>
+        <option >TOWWEST</option>
+        <option >TOWEASTMIN</option>
+        <option >TOWWESTMIN</option>
+        <option >355AEW</option>
+        <option >300AISW</option>
+        <option >900AFWG</option>
+        <option >950CEWW</option>
+        <option >AFFC</option>
+        <option >AFSSG</option>
+        <option >HSSG</option>
+        <option >PAFCMOG</option>
+        <option >PAFHRMC</option>
+        <option >NOLCOM</option>
+        <option >SOLCOM</option>
+        <option >WESCOM</option>
+        <option >VISCOM</option>
+        <option >WESTMINCOM</option>
+        <option >EASTMINCOM</option>
+        <option >JTF-NCR</option>
+      </select>
+      
+    </div>
+  <div class="form-group">
+      <button type="submit" class="btn btn-primary">Search</button>
+  </div>
+</form>
+<!-- 
+<form>
+    <h1>Personnel Records</h1>
+    <div class="input-group mb-3">
+        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" placeholder="Last Name">
+        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" placeholder="First Name">
+        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" placeholder="Middle Name">
+        <div class="form-group col-md-2">
+          
+            <select id="inputState" class="form-control">
+
+              <option selected>Suffix</option>
+              <option>Jr.</option>
+              <option>Sr.</option>
+              <option>II</option>
+              <option>III</option>
+              <option>Other</option>
+            </select>
+          </div>
+    </div>
+    <div class="input-group mb-3">
+        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" placeholder="AFSN">
+        
+        <div class="form-group col-md-2">
+            <select id="inputState" class="form-control">
+              <option selected>Rank</option>
+              <optgroup label="Officer">
+                <option value="GEN">GEN</option>
+                <option value="LTGEN">LTGEN</option>
+                <option value="BGEN">BGEN</option>
+                <option value="COL">COL</option>
+                <option value="LTC">LTC</option>
+                <option value="MAJ">MAJ</option>
+                <option value="CPT">CPT</option>
+                <option value="1LT">1LT</option>
+                <option value="2LT">2LT</option>
+              </optgroup>
+              <optgroup label="Enlisted Personnel">
+                <option value="CMSgt">CMSgt</option>
+                <option value="SMSgt">SMSgt</option>
+                <option value="MSgt">MSgt</option>
+                <option value="TSg">TSg</option>
+                <option value="SSg">SSg</option>
+                <option value="Sgt">Sgt</option>
+                <option value="A1C">A1C</option>
+                <option value="AW1C">AW1C</option>
+                <option value="A2C">A2C</option>
+                <option value="AW2C">AW2C</option>
+                <option value="AM">AM</option>
+                <option value="AW">AW</option>
+              </optgroup>
+            </select>
+        </div>
+        <div class="form-group col-md-4">
+            <select id="inputState" class="form-control">
+              <option selected>Classification</option>
+              <option>Officer</option>
+              <option>Enlistment</option>
+            </select>
+        </div>
+        <div class="form-group col-md-2">
+            <select id="inputState" class="form-control">
+              <option selected>Sex</option>
+              <option>Male</option>
+              <option>Female</option>
+            </select>
+        </div>
+        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" placeholder="Unit">
+    </div>
+    <div class="form-group">
+        <a href="" class="btn btn-primary">SEARCH</a>
+    </div>
+  </form>    -->
